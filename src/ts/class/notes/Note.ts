@@ -10,11 +10,13 @@ export interface INote {
     text: String;
     id: String;
     done: Boolean = false;
+    noteDate: String
   
     constructor(title: String, text: String) {
       this.title = title;
       this.text = text;
       this.assignId();
+      this.assignDate();
     }
   
     getNote(): Object {
@@ -32,6 +34,11 @@ export interface INote {
       this.id = id
       return this.id
 
+    }
+    assignDate(): String{
+      const date = new Date()
+      this.noteDate = `${date.getDate()}/${date.getMonth()}`
+      return this.noteDate
     }
   }
   

@@ -22,6 +22,9 @@ export class NoteListUI {
     <div class="note-actions">
       <button type="button" name="delete" class="delete btn-custom">Borrar</button>
     </div>
+    <div class="note-date">
+      <span class="date">Creada: ${note.noteDate}</span>
+    </div>
   `;
     return div;
   }
