@@ -10,19 +10,20 @@ console.clear();
 const btnFormNotes = document.querySelector('#form-notes button') as HTMLFormElement;
 const inptTitle = document.getElementById('inpt-title') as HTMLInputElement;
 const inptText = document.getElementById('inpt-text') as HTMLInputElement;
-const listDiv = document.getElementById('note-list') as HTMLDivElement;
-
+const noteListNode = document.getElementById('note-list') as HTMLDivElement;
+/* const noteLength = document.querySelector('.notes-length') as HTMLDivElement; */
 
 const noteList = new NoteList();
+
+
 const allNotes = noteList.getAllNotes();
 
 
 const noteListUI = new NoteListUI(allNotes);
-noteListUI.renderAllNotes(listDiv);
+noteListUI.renderAllNotes(noteListNode, noteList);
+noteListUI.notesLength(noteList);
 
-noteListUI.deleteNote();
 
-console.log(allNotes);
 
 //Handlers
 btnFormNotes.addEventListener('click', e => {
@@ -33,11 +34,19 @@ btnFormNotes.addEventListener('click', e => {
   if (inptTitlteVal != '' && inptTextVal != '') {
     const newNote = new Note(inptTitlteVal, inptTextVal);
     noteList.addNote(newNote)
-    noteListUI.addNote(newNote, listDiv);
-    noteListUI.deleteNote();
+    noteListUI.addNote(newNote, noteListNode);
+    console.log(allNotes)
+    noteListUI.notesLength(noteList);
     clearFormInpts(inptTitle, inptText);
-    console.log(allNotes);
   } else {
     console.log('vacio');
   }
-});
+}); 
+
+noteListNode.addEventListener('click', (e) => {
+  noteListUI.deleteNote(e)
+  const id  = noteListUI.deleteNote(e)
+  noteList.deleteNote(id)  
+  noteListUI.notesLength(noteList);
+  
+})

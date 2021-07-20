@@ -9,9 +9,12 @@ export class NoteList {
     this.noteList.push(note);
     return this.noteList;
   }
-  deleteNote(index: number) {
-    this.noteList.splice(index, 1);
-    console.log(this.getAllNotes());
+  deleteNote(id: string) {
+    this.getAllNotes().forEach((note, index) => {
+      if(note.id === id){
+        this.noteList.splice(index, 1);
+      }
+    })
   }
   getAllNotes(): Array<Note> {
     return this.noteList;
