@@ -1,0 +1,23 @@
+.form {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin-left: var(--marginAuto);
+    margin-right: var(--marginAuto);
+  }
+  .form-input {
+    display: block;
+    margin: 0.5rem 0;
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+  }
+
+  @media screen and (min-width: 992px) {
+    .form {
+      width: 35%;
+    }
+  }

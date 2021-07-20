@@ -1,0 +1,16 @@
+.note {
+    padding: 1rem;
+    border: 1px solid var(--grey);
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--white);
+  }
+  .note-title, .note-text, .note-actions{
+    margin: .7rem 0;
+  }
+  
+  @media screen and (min-width: 992px) {
+    .note-list {
+      width: 55%;
+    }
+  }
