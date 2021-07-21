@@ -6,16 +6,33 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--primaryDark);
 }
-.flex-container {
+.container{
   width: 90%;
+  max-width: 1440px;
   margin-left: var(--marginAuto);
   margin-right: var(--marginAuto);
 }
-
+.flex-container {
+  margin-left: var(--marginAuto);
+  margin-right: var(--marginAuto);
+}
+.mb-4{
+  margin-bottom: 1rem;
+}
+.grid{
+  display: grid;
+}
+.span-4{
+  grid-column: span 4;
+}
+.span-2{
+  grid-column: span 2;
+}
 @media screen and (min-width: 992px) {
     .flex-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
   }

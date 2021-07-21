@@ -5,6 +5,11 @@
     border-radius: 5px;
     background-color: var(--white);
   }
+  .title, .text, .date{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
   .notes-length div{
     padding: 1rem;
     border: 1px solid var(--grey);

@@ -6,7 +6,13 @@
     display: inline-block;
     border: none;
     border-radius: 5px;
-    background-color: var(--turquoise);
-    color: var(--white);
     cursor: pointer;
+    &.turquoise{
+      background-color: var(--turquoise);
+      color: var(--white);
+    }
+    &.danger{
+      background-color: var(--danger);
+      color: var(--white);
+    }
   }

@@ -14,16 +14,20 @@ export class NoteListUI {
     div.setAttribute('data-id', `${note.id}`)
     div.innerHTML = `
     <div class="note-title">
-      <span>Title: <br>${note.title}</span>
+      <span class="title">Title:</span><br>
+      <span>${note.title}</span>
     </div>
     <div class="note-text">
-      <span>Text: <br>${note.text}</span>
+      <span class="text">Text:</span><br>
+      <span>${note.title}</span>
     </div>
     <div class="note-actions">
-      <button type="button" name="delete" class="delete btn-custom">Borrar</button>
+      <button type="button" name="update" class="update btn-custom turquoise">Actualizar</button>
+      <button type="button" name="delete" class="delete btn-custom danger">Borrar</button>
     </div>
     <div class="note-date">
-      <span class="date">Creada: ${note.noteDate}/${note.noteMonth}</span>
+      <span class="date">Creada: </span><br>
+      <span>${note.noteDate}/${note.noteMonth}</span>
     </div>
   `;
     return div;
