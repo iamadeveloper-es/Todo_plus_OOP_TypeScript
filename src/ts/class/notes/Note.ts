@@ -9,14 +9,19 @@ export interface INote {
     title: String;
     text: String;
     id: String;
+    date: Date;
     done: Boolean = false;
-    noteDate: String
+    noteDate: String;
+    noteMonth: String
+    
   
     constructor(title: String, text: String) {
       this.title = title;
       this.text = text;
+      this.date = new Date();
+      this.noteDate = this.date.getDate().toString();
+      this.noteMonth = this.date.getMonth().toString();
       this.assignId();
-      this.assignDate();
     }
   
     getNote(): Object {
@@ -25,20 +30,14 @@ export interface INote {
       return this.note;
     }
     assignId(): String {
-      const date = new Date()
       const idComponents = [
-        date.getTime(),
-        date.getMilliseconds()
+        this.date.getTime(),
+        this.date.getMilliseconds()
       ]
       const id = idComponents.join("")
       this.id = id
       return this.id
 
-    }
-    assignDate(): String{
-      const date = new Date()
-      this.noteDate = `${date.getDate()}/${date.getMonth()}`
-      return this.noteDate
     }
   }
   
