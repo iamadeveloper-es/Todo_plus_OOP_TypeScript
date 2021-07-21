@@ -9,16 +9,32 @@
 
 <body>
     <div id="app">
-        <div class="notes-length"></div>
+        <header class="header">
+            <h1>OPP Todo TypeScript :)</h1>
+        </header>
         <div class="flex-container">
+            <form class="form" id="form-notes">
+                <h2>Nueva Nota</h2>
+                <input type="text" class="form-input" id="inpt-title">
+                <input type="text" class="form-input" id="inpt-text">
+                <button type="submit" class="btn-custom">Crear Nota</button>
+            </form>
+            <div class="notes">
+                <div class="notes-length"></div>
+                <div class="note-list" id="note-list"></div>
+            </div> 
+        </div>
+    </div>
+    <!-- <button id="btn-modal">Open</button>
+    <div class="modal" id="new-note-form">
+        <div class="modal-content">
             <form class="form" id="form-notes">
                 <h1>OPP Todo TypeScript :)</h1>
                 <input type="text" class="form-input" id="inpt-title">
                 <input type="text" class="form-input" id="inpt-text">
                 <button type="submit" class="btn-custom">Crear Nota</button>
-            </form>
-            <div class="note-list" id="note-list"></div>
+            </form> 
         </div>
-    </div>
+    </div> -->
 </body>
 </html>

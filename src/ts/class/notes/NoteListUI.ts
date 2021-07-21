@@ -47,10 +47,19 @@ export class NoteListUI {
   }
   notesLength(notes: NoteList){
     const noteLength = document.querySelector('.notes-length') as HTMLDivElement;
-    if(notes.getAllNotes().length > 0){
-      noteLength.innerHTML = `${notes.getAllNotes().length.toString()} creadas`
-    }else{
-      noteLength.innerHTML = ''
+    let text = ''
+    switch(notes.getAllNotes().length){
+      case 1:
+        text = 'nota'
+        noteLength.innerHTML = `<div>${notes.getAllNotes().length.toString()} ${text}</div>`
+        break;
+      case 0:
+        noteLength.innerHTML = ''
+        break;
+      default:
+        text = 'notas'
+        noteLength.innerHTML = `<div>${notes.getAllNotes().length.toString()} ${text}</div>`
+        break;
     }
   }
   renderAllNotes(nodeList: HTMLElement, notes: NoteList) {

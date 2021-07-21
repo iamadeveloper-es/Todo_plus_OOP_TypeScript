@@ -1,0 +1,27 @@
+.modal{
+    display: none;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    &.open{
+        transition: all .3s ease-in-out;
+        display: flex;
+        opacity: 1;
+    }
+    .modal-content{
+        width: 90%;
+        max-width: 700px;
+        margin-left: var(--marginAuto);
+        margin-right: var(--marginAuto);
+        background-color: var(--white);
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 2px 2px 6px grey;
+    }
+}

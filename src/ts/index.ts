@@ -11,7 +11,8 @@ const btnFormNotes = document.querySelector('#form-notes button') as HTMLFormEle
 const inptTitle = document.getElementById('inpt-title') as HTMLInputElement;
 const inptText = document.getElementById('inpt-text') as HTMLInputElement;
 const noteListNode = document.getElementById('note-list') as HTMLDivElement;
-/* const noteLength = document.querySelector('.notes-length') as HTMLDivElement; */
+/* const formModal = document.getElementById('new-note-form') as HTMLDivElement;
+const btnModal = document.getElementById('btn-modal')  */
 
 const noteList = new NoteList();
 
@@ -50,3 +51,16 @@ noteListNode.addEventListener('click', (e) => {
   noteListUI.notesLength(noteList);
   
 })
+
+/* btnModal.addEventListener('click', () => {
+  formModal.classList.add('open')
+  
+})
+formModal.addEventListener('click', (e) => {
+  const target = e.target as Element
+  console.log(target)
+  if(target.getAttribute('id') === 'new-note-form'){
+    formModal.classList.remove('open')
+  }
+})
+ */
