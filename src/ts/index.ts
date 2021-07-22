@@ -3,10 +3,12 @@ import { clearFormInpts } from './utils/helpers';
 import { Note } from './class/notes/Note';
 import { NoteList } from './class/notes/NoteList';
 import { NoteListUI } from './class/notes/NoteListUI';
+import { Alert } from './class/alert/Alert';
 
 console.clear();
 
 // Write TypeScript code!
+const formNotesError = document.querySelector('#form-notes .error') as HTMLDivElement;
 const btnFormNotes = document.querySelector('#form-notes button') as HTMLFormElement;
 const inptTitle = document.getElementById('inpt-title') as HTMLInputElement;
 const inptText = document.getElementById('inpt-text') as HTMLInputElement;
@@ -15,6 +17,7 @@ const noteListNode = document.getElementById('note-list') as HTMLDivElement;
 const btnModal = document.getElementById('btn-modal')  */
 
 const noteList = new NoteList();
+
 
 
 const allNotes = noteList.getAllNotes();
@@ -31,6 +34,7 @@ btnFormNotes.addEventListener('click', e => {
   e.preventDefault();
   const inptTitlteVal = inptTitle.value;
   const inptTextVal = inptText.value;
+  const alert = new Alert()
 
   if (inptTitlteVal != '' && inptTextVal != '') {
     const newNote = new Note(inptTitlteVal, inptTextVal);
@@ -39,8 +43,13 @@ btnFormNotes.addEventListener('click', e => {
     console.log(allNotes)
     noteListUI.notesLength(noteList);
     clearFormInpts(inptTitle, inptText);
+    alert.setMssg('Nota creada!!');
+    alert.setType('success');
+    alert.showAlert(formNotesError)
   } else {
-    console.log('vacio');
+    alert.setMssg('Por favor, rellena todos los campos...');
+    alert.setType('error');
+    alert.showAlert(formNotesError)
   }
 }); 
 
